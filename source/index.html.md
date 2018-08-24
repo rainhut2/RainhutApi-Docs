@@ -19,7 +19,15 @@ Rainhut API.
 
 Welcome to the Rainhut API! You can use our API to access Rainhut API endpoints, which you can use to create digital media: books, cards, flyers, and more.
 
-We have language bindings in JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Email us if you interested in using the api to create content.
+
+We have language bindings in JavaScript! You can view code examples in the dark area to the right.
+
+To view accompany javascript library:
+
+https://github.com/rainhut2/rainhutapi.git
+
+
 
 # Authentication
 
@@ -27,13 +35,13 @@ We have language bindings in JavaScript! You can view code examples in the dark 
 
 
 ```javascript
-const rainhutApi = require('rainhutApi');
-let api = rainhutApi('privateKey', 'publicKey')
+
+var rainhutapi = require("rainhutapi")
+var api = new rainhutapi(privateKey, publicKey); 
+ 
 ```
 
-
 Rainhut uses private and public token keys to allow access to the API. You can register by contacting us at <a href='mailto: lani@rainhut.com'>rainhut.</a>
-
 
 
 <aside class="notice">
@@ -65,6 +73,7 @@ footerStyle | defaultStyle | Style for footer
 headerStyle | defaultStyle | Style for header
 dateStyle | defaultStyle | Style for date
 maxFontSize | 50 | Max font size to increase
+cropImage | false | Will crop images to fit into layout if set to true.
 
 Styles
 
@@ -110,13 +119,13 @@ weight | normal | Font weight. Can be normal, italic, bold, bold italic
       },
       "dateStyle":{  
          "textColor":"#A9A9A9",
-         "fontFamily":"Roboto",
+         "fontFamily":"RobotoLight",
          "size":0.6,
-         "weight":"Light"
+         "weight":"normal"
       },
       "headerStyle":{  
          "textColor":"#000000",
-         "fontFamily":"LucidaSans",
+         "fontFamily":"Roboto",
          "size":1,
          "weight":"normal"
       }
@@ -145,6 +154,11 @@ Parameter | Default | Description
 --------- | ------- | -----------
 setup | defaultSetup | See Setup Params
 entries | [] | Entries object
+needsImageSizes | true | Setting to false will not check for setting image size, but will assume image size will be passed.
+
+<aside class="notice">
+  Image size will be detected automatically. Entry imageSize is optional, but if you want to insure the image size is correct, pass from your own data. 
+</aside>
 
 Entry
 
@@ -192,7 +206,6 @@ imageFirst | Bool | Does image layout first. Might not be applicable for given l
 rotateImage | Int | Rotates image by degrees can be negative or positive
 
 
-
 ```javascript
 const rainhutApi = require('rainhutApi');
 let api = rainhutApi('privateKey', 'publicKey')
@@ -204,7 +217,6 @@ let book = api.kittens.create({});
 ```json
 {
   "bookId": "7007ac62-456e-43c5-afc7-751546c5fce4",
-  "webhook": {"url": "http://localhost:3002/noexists"},
   "pages": [
     {
       "layout": "2_a",
@@ -252,6 +264,10 @@ let book = api.kittens.create({});
 
 Simple pass the book object returned from create2. 
 
+<aside class="success">
+  needsImageSizes will default to false for this call
+</aside>
+
 Remove any pages that you are not updating. Replace the page(s) that you passed with the pages that are returned.
 
 ## Upload Book
@@ -280,3 +296,7 @@ url | String | Your callback url
 headers | Object | Any headers you want to pass back ie. 
 {headers: {authentication: 'test'}}
 
+
+```
+{webhook: "urltocallbackgoeshere", headers:{authentication: "test"}}
+```
