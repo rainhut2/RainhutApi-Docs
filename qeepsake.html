@@ -1,0 +1,1020 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Rainhut API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="qeepsake" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#rainhut-setup" class="toc-h1 toc-link" data-title="Rainhut Setup">Rainhut Setup</a>
+          </li>
+          <li>
+            <a href="#api-endpoints" class="toc-h1 toc-link" data-title="API Endpoints">API Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-book" class="toc-h2 toc-link" data-title="Create Book">Create Book</a>
+                  </li>
+                  <li>
+                    <a href="#update-book" class="toc-h2 toc-link" data-title="Update Book">Update Book</a>
+                  </li>
+                  <li>
+                    <a href="#upload-book" class="toc-h2 toc-link" data-title="Upload Book">Upload Book</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#qeepsake-layouts" class="toc-h1 toc-link" data-title="Qeepsake Layouts">Qeepsake Layouts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#headers" class="toc-h2 toc-link" data-title="Headers">Headers</a>
+                  </li>
+                  <li>
+                    <a href="#1" class="toc-h2 toc-link" data-title="1">1</a>
+                  </li>
+                  <li>
+                    <a href="#2" class="toc-h2 toc-link" data-title="2">2</a>
+                  </li>
+                  <li>
+                    <a href="#3" class="toc-h2 toc-link" data-title="3">3</a>
+                  </li>
+                  <li>
+                    <a href="#4" class="toc-h2 toc-link" data-title="4">4</a>
+                  </li>
+                  <li>
+                    <a href="#5" class="toc-h2 toc-link" data-title="5">5</a>
+                  </li>
+                  <li>
+                    <a href="#6" class="toc-h2 toc-link" data-title="6">6</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='mailto:lani@rainhut.com'>Email us for a key.</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Rainhut API</p>
+
+<p>Welcome to the Rainhut API.  Access the API endpoints to
+create digital media: books, cards, flyers, and more.</p>
+
+<p>Start building your own content now. Contract Rainhut at
+support@rainhut.com </p>
+
+<p>We have language bindings in JavaScript. As you browse
+this document, view code examples in the dark area to the right.</p>
+
+<p>Visit the corresponding JavaScript Github repository here:</p>
+
+<p><a href='https://github.com/rainhut2/rainhutapi'>https://github.com/rainhut2/rainhutapi</a></p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">rainhutapi</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"rainhutapi"</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">rainhutapi</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">,</span> <span class="nx">publicKey</span><span class="p">);</span> 
+
+</code></pre>
+<p>Rainhut uses private and public token keys to allow access to the API. You can register by contacting us at <a href='mailto: support@rainhut.com'>support@rainhut.com</a></p>
+
+<aside class="notice">
+You must replace <code>'privateKey', 'publicKey'</code> with your personal private and public keys.
+
+Checkout the javascript api for example on how to authenticate your own app.
+</aside>
+<h1 id='rainhut-setup'>Rainhut Setup</h1>
+<p>For every call you will need to pass a setup object.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>paddingLeft</td>
+<td>0</td>
+<td>Will set padding on page left</td>
+</tr>
+<tr>
+<td>paddingRight</td>
+<td>0</td>
+<td>Will set padding on page right</td>
+</tr>
+<tr>
+<td>paddingTop</td>
+<td>0</td>
+<td>Will set padding on page top</td>
+</tr>
+<tr>
+<td>paddingBottom</td>
+<td>0</td>
+<td>Will set padding on page bottom</td>
+</tr>
+<tr>
+<td>headerHeight</td>
+<td>50</td>
+<td>Header height</td>
+</tr>
+<tr>
+<td>footerHeight</td>
+<td>50</td>
+<td>Footer height</td>
+</tr>
+<tr>
+<td>columnSpacing</td>
+<td>10</td>
+<td>How much space between columns</td>
+</tr>
+<tr>
+<td>entrySpacing</td>
+<td>10</td>
+<td>How much space between each item</td>
+</tr>
+<tr>
+<td>width</td>
+<td>1000</td>
+<td>Document width. Including padding</td>
+</tr>
+<tr>
+<td>height</td>
+<td>800</td>
+<td>Document height. Including padding</td>
+</tr>
+<tr>
+<td>questionStyle</td>
+<td>defaultStyle</td>
+<td>Style for entry question</td>
+</tr>
+<tr>
+<td>answerStyle</td>
+<td>defaultStyle</td>
+<td>Style for entry answer</td>
+</tr>
+<tr>
+<td>footerStyle</td>
+<td>defaultStyle</td>
+<td>Style for footer</td>
+</tr>
+<tr>
+<td>headerStyle</td>
+<td>defaultStyle</td>
+<td>Style for header</td>
+</tr>
+<tr>
+<td>dateStyle</td>
+<td>defaultStyle</td>
+<td>Style for date</td>
+</tr>
+<tr>
+<td>maxFontSize</td>
+<td>50</td>
+<td>Max font size to increase. In pixels.</td>
+</tr>
+<tr>
+<td>cropImage</td>
+<td>false</td>
+<td>Will crop images to fit into layout if set to true.</td>
+</tr>
+<tr>
+<td>imageClass</td>
+<td>&#39;&#39;</td>
+<td>Any custom image effects that have been setup for your layouts. Possible options for Qeepsake &quot;imageBorderShadow1&quot;, will add a show box around image.</td>
+</tr>
+<tr>
+<td>minimumDpi</td>
+<td>90</td>
+<td>Sets minimum dpi for images to scale</td>
+</tr>
+<tr>
+<td>highResDpi</td>
+<td>150</td>
+<td>Sets what a highres dpi for image is</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>&#39;2017-22-10&#39;</td>
+<td>Birthday of given journal entry book</td>
+</tr>
+<tr>
+<td>backgroundImage</td>
+<td>&quot;&quot;</td>
+<td>Will add a background image to the pages. Can take a local file or a url to an image. Preferably svg. &quot;./../img/swish.svg&quot; is current local background.</td>
+</tr>
+<tr>
+<td>rotateAmount</td>
+<td>0</td>
+<td>Will rotate image randomly by degrees + or -. Passing 0 will not rotate image.</td>
+</tr>
+<tr>
+<td>minTextFullPage</td>
+<td>650</td>
+<td>Rule to specify what a full page text will look like. 650 characters is the break amount for a full page entry.</td>
+</tr>
+<tr>
+<td>boldFirstAnswer</td>
+<td>true</td>
+<td>Will bold first sentence in answer if not question is available.</td>
+</tr>
+<tr>
+<td>randomForEqual</td>
+<td>false</td>
+<td>Will randomize options for equal, best layout choices. If false will alternate between best choices.</td>
+</tr>
+</tbody></table>
+
+<p>Styles</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>textColor</td>
+<td>0</td>
+<td>Will set padding on page left</td>
+</tr>
+<tr>
+<td>fontFamily</td>
+<td>0</td>
+<td>Will set padding on page right</td>
+</tr>
+<tr>
+<td>size</td>
+<td>1.0</td>
+<td>Font size on relative scale set to 18px. Font can increase up to given maxFontSize</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>normal</td>
+<td>Font weight. Can be normal, italic, bold, bold italic</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Setup Example:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>   "setup":{  
+      "paddingLeft":50,
+      "paddingRight":50,
+      "paddingTop":50,
+      "paddingBottom":50,
+      "headerHeight":50,
+      "footerHeight":50,
+      "columnSpacing":10,
+      "entrySpacing":5,
+      "width":1000,
+      "height":800,
+      "maxFontSize":50,
+      "questionStyle":{  
+         "textColor":"#708090",
+         "fontFamily":"Roboto",
+         "size":1,
+         "weight":"bold"
+      },
+      "answerStyle":{  
+         "textColor":"#696969",
+         "fontFamily":"Roboto",
+         "size":0.8,
+         "weight":"normal"
+      },
+      "footerStyle":{  
+         "textColor":"#000000",
+         "fontFamily":"Roboto",
+         "size":1,
+         "weight":"bold italic"
+      },
+      "dateStyle":{  
+         "textColor":"#A9A9A9",
+         "fontFamily":"RobotoLight",
+         "size":0.6,
+         "weight":"normal"
+      },
+      "headerStyle":{  
+         "textColor":"#000000",
+         "fontFamily":"Roboto",
+         "size":1,
+         "weight":"normal"
+      },
+      "cropImage":false,
+      "backgroundImage":"",
+      "rotateAmount":7,
+      "borderColor":"#e2e2e2",
+      "borderWidth":4,
+      "minimumDpi": 90,
+      "imageClass": ""
+   }
+
+</code></pre><h1 id='api-endpoints'>API Endpoints</h1><h2 id='create-book'>Create Book</h2><h3 id='http-post'>HTTP Post</h3>
+<p><code>Post https://artapi2.rainhut.com/api/create2</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>setup</td>
+<td>defaultSetup</td>
+<td>See Setup Params</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>[]</td>
+<td>Entries object</td>
+</tr>
+<tr>
+<td>needsImageSizes</td>
+<td>true</td>
+<td>Setting to false will not check for setting image size. No matter what is passed in imageWidth and imageHeight.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  Image size will be detected automatically. Entry imageSize is optional, but if you want to insure the image size is correct, pass from your own data. If you pass imageWidth and imageHeight then it will never be calculated if if you set the flag to true.
+</aside>
+
+<p>Entry</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>imageWidth</td>
+<td>0</td>
+<td>Image width, Int</td>
+</tr>
+<tr>
+<td>imageHeight</td>
+<td>0</td>
+<td>Image height, Int</td>
+</tr>
+<tr>
+<td>question</td>
+<td>&#39;&#39;</td>
+<td>question for entry</td>
+</tr>
+<tr>
+<td>answer</td>
+<td>&#39;&#39;</td>
+<td>answer for entry</td>
+</tr>
+<tr>
+<td>date</td>
+<td>&#39;&#39;</td>
+<td>Date for entry. UTC format</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>&#39;&#39;</td>
+<td>Footer, pass Generate_AGE to calculate age based on the last entry on page and the birday passed in setup.</td>
+</tr>
+<tr>
+<td>header</td>
+<td>&#39;&#39;</td>
+<td>Header string</td>
+</tr>
+<tr>
+<td>isHeader</td>
+<td>false</td>
+<td>Will choose from Header layouts for the page.</td>
+</tr>
+<tr>
+<td>isSingleEntry</td>
+<td>false</td>
+<td>Will force this to be the only entry on a page.</td>
+</tr>
+<tr>
+<td>forceLayout</td>
+<td>&#39;&#39;</td>
+<td>Will force the layout of a given one entry. Only singe entry items will work or double image and text.</td>
+</tr>
+</tbody></table>
+<h3 id='description'>Description</h3>
+<p>Passing entries and setup will return a book with different layouts.</p>
+
+<aside class="success">
+  This is the start for creating a book.
+</aside>
+<h3 id='returns'>Returns</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bookId</td>
+<td>String</td>
+<td>unique id for generated book</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Array of page</td>
+<td>returns an array of each page</td>
+</tr>
+</tbody></table>
+
+<p>Page </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>layout</td>
+<td>String</td>
+<td>current layout</td>
+</tr>
+<tr>
+<td>layoutPreview</td>
+<td>String</td>
+<td>url to image</td>
+</tr>
+<tr>
+<td>otherLayoutOptions</td>
+<td>Array of String</td>
+<td>other options including current option. Sorted best to least (if applicable)</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>Array of entry</td>
+<td>Each entry for the current page</td>
+</tr>
+</tbody></table>
+
+<p>Entry extra parameters returned.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>imageFirst</td>
+<td>Bool</td>
+<td>Does image layout first. Might not be applicable for given layout.</td>
+</tr>
+<tr>
+<td>rotateImage</td>
+<td>Int</td>
+<td>Rotates image by degrees can be negative or positive</td>
+</tr>
+</tbody></table>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">rainhutApi</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rainhutApi'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">rainhutApi</span><span class="p">(</span><span class="s1">'privateKey'</span><span class="p">,</span> <span class="s1">'publicKey'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"bookId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7007ac62-456e-43c5-afc7-751546c5fce4"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2_a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"otherLayoutOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2_a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2_d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2_f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2_g"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Header"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Item question"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Item answer"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imageurlhereOrBlank"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"imageWidth"</span><span class="p">:</span><span class="w"> </span><span class="mi">993</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"imageHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1355</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-01 05:55:56 UTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footer"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"isHeader"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"textCountEntry"</span><span class="p">:</span><span class="w"> </span><span class="mi">342</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"textCountEntryPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cropImage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"imageFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rotateImage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"pageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de8da3d1-cba0-493b-b9bd-edea2ec68e2a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sampleImage2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urltoimage"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"setup"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='update-book'>Update Book</h2><h3 id='http-post-2'>HTTP Post</h3>
+<p><code>Post https://artapi2.rainhut.com/api/update2</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<p>Simple pass the book object returned from create2. </p>
+
+<p>Extra parameters </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>layoutToBestFit</td>
+<td>Bool</td>
+<td>Will change the layout to best fit the changed content. Important when removing entries or modifying large amounts of text or change images. Defaults to false.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  needsImageSizes will default to false for this call
+</aside>
+
+<aside class="notice">
+Remove any pages that you are not updating. Replace the page(s) that you passed with the pages that are returned.
+</aside>
+<h2 id='upload-book'>Upload Book</h2><h3 id='http-post-3'>HTTP Post</h3>
+<p><code>Post https://artapi2.rainhut.com/api/upload2</code></p>
+<h3 id='body-parameters-3'>Body Parameters</h3>
+<p>Simple pass the book object returned from create2 or the modified update2 book</p>
+
+<p>Extra parameter. </p>
+<h3 id='webhook'>Webhook</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhook</td>
+<td>Object</td>
+<td>Callback for the status of the upload of each page</td>
+</tr>
+</tbody></table>
+
+<p>Webhook object</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Your callback url</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>Object</td>
+<td>Any headers you want to pass back ie.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Headers example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span><span class="nl">headers</span><span class="p">:</span> <span class="p">{</span><span class="nl">authentication</span><span class="p">:</span> <span class="s1">'test'</span><span class="p">}}</span>
+</code></pre>
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>success or failed</td>
+</tr>
+<tr>
+<td>bookId</td>
+<td>String</td>
+<td>bookId of pdf being processed</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Int</td>
+<td>pageIndex</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>url of pdf</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>error message if failed</td>
+</tr>
+</tbody></table>
+
+<p>Errors
+If the webhook is returning anything other than a 200 status code. It will retry up to 5 times. </p>
+
+<blockquote>
+<p>Example of webhook object</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span><span class="nl">webhook</span><span class="p">:</span> <span class="s2">"urltocallbackgoeshere"</span><span class="p">,</span> <span class="nx">headers</span><span class="p">:{</span><span class="nl">authentication</span><span class="p">:</span> <span class="s2">"test"</span><span class="p">}}</span>
+</code></pre>
+<blockquote>
+<p>Webhook returns</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//success</span>
+ <span class="p">{</span><span class="s2">"status"</span><span class="p">:</span> <span class="s2">"success"</span><span class="p">,</span> <span class="s2">"bookId"</span><span class="p">:</span> <span class="nx">bookId</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">:</span> <span class="nx">pageIndex</span><span class="p">,</span> <span class="s2">"url"</span><span class="p">:</span> <span class="nx">result</span><span class="p">}</span>
+
+<span class="c1">//failed</span>
+<span class="p">{</span><span class="s2">"status"</span><span class="p">:</span> <span class="s2">"failed"</span><span class="p">,</span>  <span class="s2">"bookId"</span><span class="p">:</span> <span class="nx">bookId</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">:</span> <span class="nx">pageIndex</span><span class="p">,</span> <span class="s2">"message"</span><span class="p">:</span>  <span class="nx">errorMessage</span><span class="p">}</span>
+</code></pre><h1 id='errors'>Errors</h1>
+<aside class="notice">
+Any json returned with "status": "error" the request has failed with the following message.
+</aside>
+
+<p>The Rainhut API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- Administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified Rainhut endpoint could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a Rainhut with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The Rainhut requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many Rainhut! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+<h1 id='qeepsake-layouts'>Qeepsake Layouts</h1>
+<aside class="notice">
+Current Layouts for Qeepsake
+</aside>
+
+<p>By entries count</p>
+<h2 id='headers'>Headers</h2>
+<p>h_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/h_1.png'/></p>
+
+<p>h_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/h_2.png'/></p>
+
+<p>h_3</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/h_3.png'/></p>
+<h2 id='1'>1</h2>
+<p>1_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/1_1.png'/></p>
+
+<p>1_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/1_2.png'/></p>
+<h2 id='2'>2</h2>
+<p>2_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_1.png'/></p>
+
+<p>2_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_2.png'/></p>
+
+<p>2_3</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_3.png'/></p>
+
+<p>2_4</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_4.png'/></p>
+
+<p>2_5</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_5.png'/></p>
+
+<p>2_6</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/2_6.png'/></p>
+<h2 id='3'>3</h2>
+<p>3_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/3_1.png'/></p>
+
+<p>3_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/3_2.png'/></p>
+<h2 id='4'>4</h2>
+<p>4_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/4_1.png'/></p>
+
+<p>4_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/4_2.png'/></p>
+
+<p>4_3</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/4_3.png'/></p>
+<h2 id='5'>5</h2>
+<p>5_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/5_1.png'/></p>
+
+<p>5_2</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/5_2.png'/></p>
+<h2 id='6'>6</h2>
+<p>6_1</p>
+
+<p><img src='https://s3.amazonaws.com/rainhut/qeepsake/6_1.png'/></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
