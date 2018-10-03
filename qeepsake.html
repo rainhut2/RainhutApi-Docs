@@ -503,58 +503,57 @@ Checkout the javascript api for example on how to authenticate your own app.
 </tbody></table>
 
 <blockquote>
-<p>Setup Example:</p>
+<p>Setup Current Default:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>   "setup":{  
-      "paddingLeft":50,
-      "paddingRight":50,
-      "paddingTop":50,
-      "paddingBottom":50,
-      "headerHeight":50,
-      "footerHeight":50,
-      "columnSpacing":10,
-      "entrySpacing":5,
-      "width":1000,
-      "height":800,
-      "maxFontSize":50,
-      "questionStyle":{  
-         "textColor":"#708090",
-         "fontFamily":"Roboto",
-         "size":1,
-         "weight":"bold"
-      },
-      "answerStyle":{  
-         "textColor":"#696969",
-         "fontFamily":"Roboto",
-         "size":0.8,
-         "weight":"normal"
-      },
-      "footerStyle":{  
-         "textColor":"#000000",
-         "fontFamily":"Roboto",
-         "size":1,
-         "weight":"bold italic"
-      },
-      "dateStyle":{  
-         "textColor":"#A9A9A9",
-         "fontFamily":"RobotoLight",
-         "size":0.6,
-         "weight":"normal"
-      },
-      "headerStyle":{  
-         "textColor":"#000000",
-         "fontFamily":"Roboto",
-         "size":1,
-         "weight":"normal"
-      },
-      "cropImage":false,
-      "backgroundImage":"",
-      "rotateAmount":7,
-      "borderColor":"#e2e2e2",
-      "borderWidth":4,
-      "minimumDpi": 90,
-      "imageClass": ""
-   }
+<pre class="highlight plaintext"><code>
+const pixelSize = 96
+const cropInches = 0.3359
+
+inchesToPixels = (inches) =&gt; {
+    return inches*pixelSize
+}
+
+   "setup":{
+  paddingLeft: 50,
+  paddingRight: 50,
+  paddingTop: 50,
+  paddingBottom:  50, 
+  cropMarginLeft: inchesToPixels(cropInches),
+  cropMarginRight: inchesToPixels(cropInches),
+  cropMarginBottom: inchesToPixels(cropInches),
+  cropMarginTop: inchesToPixels(cropInches),
+  columnSpacing: 50,
+  headerHeight: 15,
+  footerHeight: 15,
+  entrySpacing: inchesToPixels(0.1),
+  width: inchesToPixels(8.1),
+  height: inchesToPixels(6.48),
+  questionStyle: questionStyle,
+  answerStyle: answerStyle,
+  footerStyle: footerStyle,
+  dateStyle: dateStyle,
+  headerStyle: headerStyle,
+  headerPageStyle: headerPageStyle,
+  boldFirstAnswer: false,
+  fitImagesRule: "few",
+  fitTextRule: "many",
+  imageClass: "imageBorderShadow1",
+  cropImage: false,
+  backgroundImage: "",
+  backgroundImageAlternate: ["./../img/swish1.svg", "./../img/swish2.svg"],
+  rotateAmount: 0,
+  borderColor: "#e2e2e2",
+  borderWidth: 0,
+  minimumDpi: 90,
+  minTextFullPage: 600,
+  highResDpi: 150,
+  birthday: '2017-01-11',
+  doUpperCaseDate: true,
+  dateInputFormat: 'YYYY-MM-DD HH:mm:ss',
+  dateFormat: "dddd, MMMM DD, YYYY",
+  neverSplitLongText: true
+};
+
 
 </code></pre><h1 id='api-endpoints'>API Endpoints</h1><h2 id='create-book'>Create Book</h2><h3 id='http-post'>HTTP Post</h3>
 <p><code>Post https://artapi2.rainhut.com/api/create2</code></p>
