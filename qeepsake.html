@@ -513,6 +513,29 @@ inchesToPixels = (inches) =&gt; {
     return inches*pixelSize
 }
 
+
+class FontStyle {
+    constructor(textColor, fontFamily, size, weight) {
+      this.textColor = textColor;
+      this.fontFamily = fontFamily;
+      this.size = size;
+      if (weight == undefined) {
+        this.weight = "";
+      } else {
+        this.weight = weight;
+      }
+    }
+  }
+
+const questionStyle = new FontStyle("#6f2888", "Rosario", 1.0);
+const answerStyle = new FontStyle("#36485e", "Lato", 0.8);
+const footerStyle = new FontStyle("#666666", "Lato", 0.5);
+const dateStyle = new FontStyle("#666666", "LucidaSans", 0.6);
+const headerStyle = new FontStyle("#666666", "Lato", 0.5);
+const headerPageStyle = new FontStyle("#33495D", "LucidaSans", 2.0);
+
+
+
    "setup":{
   paddingLeft: 50,
   paddingRight: 50,
